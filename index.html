@@ -103,6 +103,121 @@
         display: inline-block;
       }
     }
+    /* Premium Gallery Slider */
+
+.gallery-slider {
+  width: max-content;
+  animation: scrollGallery 28s linear infinite;
+}
+
+.gallery-card {
+  width: 340px;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 28px;
+  flex-shrink: 0;
+  position: relative;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.10),
+    0 4px 12px rgba(220,38,38,0.12);
+
+  transition: all 0.4s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .gallery-card {
+    width: 260px;
+    height: 180px;
+    border-radius: 22px;
+  }
+
+  .gallery-slider {
+    animation-duration: 20s;
+  }
+}
+
+/* Reviews Slider */
+
+.review-slider {
+  width: max-content;
+  animation: scrollReviews 30s linear infinite;
+}
+
+.review-card {
+  width: 360px;
+  flex-shrink: 0;
+
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+
+  border: 1px solid rgb(228 228 231);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+
+  transition: all 0.4s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.10);
+}
+
+@keyframes scrollReviews {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .review-card {
+    width: 280px;
+    padding: 24px;
+  }
+
+  .review-slider {
+    animation-duration: 20s;
+  }
+}
   </style>
 
   <script type="application/ld+json">
@@ -351,22 +466,30 @@
             <li>Blood Sugar (FBS / RBS / PPBS)</li>
             <li>HbA1c</li>
             <li>Lipid Profile</li>
-            <li>Liver Function Test</li>
-            <li>Renal Function Test</li>
+            <li>Liver Profile</li>
+            <li>Renal Profile</li>
             <li>Electrolytes</li>
             <li>Calcium</li>
+            <li>C14-MB</li>
+            <li>C14-NAC</li>
+            <li>AmyLase</li>
+            <li>Lipase</li>
+            <li>GGT</li>
+            <li>CRP</li>
           </ul>
         </div>
 
         <div class="rounded-3xl bg-white p-6 shadow-soft border border-zinc-200">
           <h3 class="text-xl font-bold text-red-700">Haematology</h3>
           <ul class="mt-4 space-y-2 text-sm text-zinc-700 list-disc list-inside">
-            <li>CBC / Complete Haemogram</li>
+            <li>CBC / Complete Blood Count</li>
             <li>Hb%</li>
             <li>ESR</li>
             <li>Platelet Count</li>
             <li>Blood Group & Rh Type</li>
             <li>Bleeding Time / Clotting Time</li>
+            <li>PT-INR</li>
+            <li>APTT</li>
           </ul>
         </div>
 
@@ -374,11 +497,17 @@
           <h3 class="text-xl font-bold text-red-700">Serology</h3>
           <ul class="mt-4 space-y-2 text-sm text-zinc-700 list-disc list-inside">
             <li>Widal Test</li>
-            <li>Dengue Test</li>
+            <li>Dengue (IGG, IGM, NS1)</li>
             <li>Rapid Malaria</li>
             <li>HIV I & II</li>
             <li>HBsAg</li>
             <li>HCV</li>
+            <li>VDRL</li>
+            <li>RA factor</li>
+            <li>ASLO</li>
+            <li>WIDAL</li>
+            <li>TROPHONIN I</li>
+            <li>Leptospira</li>
           </ul>
         </div>
 
@@ -389,16 +518,26 @@
             <li>Urine Sugar</li>
             <li>Urine Albumin</li>
             <li>Pregnancy Test</li>
+            <li>Urine Cotinine</li>
+            <li>Urine Protine Creatine Ratio</li>
+            <li>Urine Albumin Creatine Ratio</li>
+            <li>Urine Cultur and Sensitivity</li>
           </ul>
         </div>
 
         <div class="rounded-3xl bg-white p-6 shadow-soft border border-zinc-200">
           <h3 class="text-xl font-bold text-red-700">Microbiology</h3>
           <ul class="mt-4 space-y-2 text-sm text-zinc-700 list-disc list-inside">
+            <li>Microbiology</li>
             <li>Gram Stain</li>
             <li>AFB Stain</li>
-            <li>Stool Examination</li>
-            <li>KOH Preparation</li>
+            <li>Z.N Stain</li>
+            <li>Blood Cultur and Sensitivity</li>
+            <li>Urin Cultur and Sensitivity</li>
+            <li>Stool Routine</li>
+            <li>OVA-Syst</li>
+            <li>Blood Cultur and Sensitivity</li>
+            <li>PUS Culter and Sensitivity</li>
           </ul>
         </div>
 
@@ -410,6 +549,19 @@
             <li>Vitamin D</li>
             <li>PSA</li>
             <li>Testosterone</li>
+            <li>FT3, FT4, TSH</li>
+            <li>LH</li>
+            <li>FSH</li>
+            <li>Prolaetin</li>
+            <li>Beta HCG</li>
+            <li>Vitamin D</li>
+            <li>Vitamin B12</li>
+            <li>AMH</li>
+            <li>PSA Total</li>
+            <li>Testosterone Total and free</li>
+            <li>Double Marker test</li>
+            <li>Triple Marker Screen</li>
+            <li>Quader Marker Screen</li>
           </ul>
         </div>
       </div>
@@ -427,8 +579,8 @@
         </p>
       </div>
 
-      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="relative rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition">
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+        <div class="relative rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition flex flex-col h-full">
           <span class="absolute top-4 right-4 bg-red-700 text-white text-xs px-3 py-1 rounded-full">
             Popular
           </span>
@@ -437,64 +589,129 @@
 
           <ul class="mt-4 space-y-2 text-sm text-zinc-700">
             <li>✔ Fasting Blood Sugar (FBS)</li>
-            <li>✔ Post Lunch Blood Sugar (PPBS)</li>
-            <li>✔ HbA1c</li>
-            <li>✔ Consultation Guidance</li>
+            <li>✔ Post Prandianl Blood Sugar (PPBS)</li>
+            <li>✔ HBA1C (Glycolated Hemoglobin - HPLC method)</li>
           </ul>
 
-          <div class="mt-5 flex items-center justify-between">
-            <p class="text-3xl font-black text-zinc-900">₹499</p>
-            <p class="text-xs text-zinc-400">Report in 24 hrs</p>
+          <div class="mt-auto pt-6 flex items-end justify-between">
+            <p class="text-3xl font-black text-zinc-900">₹399</p>
+            <p class="text-xs text-zinc-400">Report in 02 hrs</p>
           </div>
-
+         
           <button onclick="bookPackage('Diabetes Care Package')"
             class="mt-6 w-full bg-gradient-to-r from-red-600 to-red-800 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:scale-[1.02] transition">
             Schedule via WhatsApp
           </button>
         </div>
 
-        <div class="rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition">
-          <h3 class="text-xl font-bold text-red-700">Full Body Checkup</h3>
+        <div class="rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition flex flex-col h-full">
+          <h3 class="text-xl font-bold text-red-700">Master Health Checkup</h3>
 
           <ul class="mt-4 space-y-2 text-sm text-zinc-700">
-            <li>✔ CBC (Complete Blood Count)</li>
-            <li>✔ Liver Function Test (LFT)</li>
-            <li>✔ Kidney Function Test (KFT)</li>
-            <li>✔ Lipid Profile</li>
-            <li>✔ Blood Sugar</li>
+            <li>✔ CBC (Complete Blood Count) - [19]</li>
+            <li>✔ FBS (Fasting Blood Sugar)</li>
+            <li>✔ HBA1C (Glycolated Hemoglobin - HPLC method)</li>
+            <li>✔ RFT (Kidney Function Test) - [3]</li>
+            <li>✔ LFT (Liver Function Test) - [10]</li>
+            <li>✔ Lipid Profile - [7]</li>
+            <li><b>✔ Calcium</b></li>
+            <li>✔ TFT (Thyroid Function Test) - [3]</li>
+            <li><b>✔ Urine Routine</b></li>
           </ul>
 
-          <div class="mt-5 flex items-center justify-between">
-            <p class="text-3xl font-black text-zinc-900">₹999</p>
+          <div class="mt-auto pt-6 flex items-end justify-between">
+            <p class="text-3xl font-black text-zinc-900">₹1499</p>
             <p class="text-xs text-zinc-400">Best Value</p>
           </div>
 
-          <button onclick="bookPackage('Full Body Checkup')"
+          <button onclick="bookPackage('Master Health Checkup')"
             class="mt-6 w-full bg-gradient-to-r from-red-600 to-red-800 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:scale-[1.02] transition">
             Schedule via WhatsApp
           </button>
         </div>
 
-        <div class="rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition">
-          <h3 class="text-xl font-bold text-red-700">Thyroid Profile Package</h3>
+        <div class="rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition flex flex-col h-full">
+          <h3 class="text-xl font-bold text-red-700">Full Body Health Checkups</h3>
 
           <ul class="mt-4 space-y-2 text-sm text-zinc-700">
-            <li>✔ T3</li>
-            <li>✔ T4</li>
-            <li>✔ TSH</li>
-            <li>✔ Doctor Suggested Range Info</li>
+            <li>✔ CBC (Complete Blood Count)</li>
+            <li>✔ FBS (Fasting Blood Sugar)</li>
+            <li>✔ HBA1C (Glycolated Hemoglobin - HPLC method)</li>
+            <li>✔ KFT (Kidney Function Test)</li>
+            <li>✔ LFT (Liver Function Test)</li>
+            <li>✔ Lipid Profile</li>
+            <li><b>✔ Calcium</b></li>
+            <li>✔ TFT (Thyroid Function Test) </li>
+            <li><b>✔ Vitamin D</b></li>
+            <li><b>✔ Vitamin B12</b></li>
+            <li><b>✔ Urine Routine</b></li>
           </ul>
 
-          <div class="mt-6 flex items-end justify-between">
-            <p class="text-3xl font-black text-zinc-900">₹499</p>
+          <div class="mt-auto pt-6 flex items-end justify-between">
+            <p class="text-3xl font-black text-zinc-900">₹1999</p>
             <p class="text-xs text-zinc-400">All inclusive</p>
           </div>
 
-          <button onclick="bookPackage('Thyroid Profile Package')"
+          <button onclick="bookPackage('Master Health Checkup-2')"
             class="mt-6 w-full bg-gradient-to-r from-red-600 to-red-800 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:scale-[1.02] transition">
             Schedule via WhatsApp
           </button>
         </div>
+        <div class="rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition flex flex-col h-full">
+          <h3 class="text-xl font-bold text-red-700">Arthritis Profile</h3>
+
+          <ul class="mt-4 space-y-2 text-sm text-zinc-700">
+            <li>✔ CBC (Complete Blood Count) </li>
+            <li>✔ FBS (Fasting Blood Sugar) </li>
+            <li>✔ RA (Rheumotid factor) </li>
+            <li>✔ CRP (C-Reactive Profile) </li>
+            <li>✔ Uric Acid </li>
+          </ul>
+
+          <div class="mt-auto pt-6 flex items-end justify-between">
+            <p class="text-3xl font-black text-zinc-900">₹799</p>
+            <p class="text-xs text-zinc-400">All inclusive</p>
+          </div>
+
+          <button onclick="bookPackage('Arthritis Profile')"
+            class="mt-6 w-full bg-gradient-to-r from-red-600 to-red-800 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:scale-[1.02] transition">
+            Schedule via WhatsApp
+          </button>
+        </div>
+        <div class="rounded-3xl border bg-white p-6 shadow-soft hover:scale-105 transition flex flex-col h-full">
+          <span class="absolute top-3 right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full">
+            Best for Body builders
+          </span>
+
+          <h3 class="text-xl font-bold text-red-700">BodyBuild Pro Package</h3>
+
+          <ul class="mt-4 space-y-2 text-sm text-zinc-700">
+            <li>✔ CBC</li>
+            <li>✔ FBS</li>
+            <li>✔ HBA1C</li>
+            <li>✔ RFT</li>
+            <li>✔ LFT</li>
+            <li>✔ Lipid Profile</li>
+            <li><b>✔ Calcium</b></li>
+            <li>✔ TFT</li>
+            <li><b>✔ Vitamin D</b></li>
+            <li><b>✔ Vitamin B12</b></li>
+            <li><b>✔ Iron Profile</b></li>
+            <li><b>✔ Testosterone Total</b></li>
+          </ul>
+
+          <div class="mt-auto pt-6 flex items-end justify-between">
+            <p class="text-3xl font-black text-zinc-900">₹2999</p>
+            <p class="text-xs text-zinc-400">All inclusive</p>
+          </div>
+
+          <button onclick="bookPackage('BodyBuild Pro Package')"
+            class="mt-6 w-full bg-gradient-to-r from-red-600 to-red-800 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-xl hover:scale-[1.02] transition">
+            Schedule via WhatsApp
+          </button>
+        </div>
+      </div>
+      </div>
       </div>
     </div>
   </section>
@@ -533,39 +750,164 @@
     </div>
   </section>
 
+ <!-- Premium Auto Sliding Gallery -->
+<section id="gallery" class="py-16 sm:py-20 bg-gradient-to-b from-zinc-50 to-white overflow-hidden">
+
+  <div class="mx-auto max-w-6xl px-4 text-center">
+    <p class="text-sm font-bold uppercase text-red-700">
+      Our Laboratory
+    </p>
+
+    <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
+      Advanced Diagnostic Infrastructure
+    </h2>
+
+    <p class="mt-4 text-zinc-600 max-w-2xl mx-auto">
+      Modern equipment, clean environment and trusted healthcare services.
+    </p>
+  </div>
+
+  <!-- Slider -->
+  <div class="relative mt-12">
+
+    <div class="gallery-slider flex gap-6">
+
+      <!-- Image 1 -->
+      <div class="gallery-card">
+        <img src="assets/img/img_b1.jpeg" alt="">
+      </div>
+
+      <!-- Image 2 -->
+      <div class="gallery-card">
+        <img src="assets/img/img_b2.jpeg" alt="">
+      </div>
+
+      <!-- Image 3 -->
+      <div class="gallery-card">
+        <img src="assets/img/img_b3.jpeg" alt="">
+      </div>
+
+      <!-- Image 4 -->
+      <div class="gallery-card">
+        <img src="assets/img/img_b4.jpeg" alt="">
+      </div>
+
+      <!-- Image 5 -->
+      <div class="gallery-card">
+        <img src="assets/img/img_b5.jpeg" alt="">
+      </div>
+
+      <!-- Duplicate for smooth infinite scroll -->
+      <div class="gallery-card">
+        <img src="assets/img/img_b6.jpeg" alt="dr">
+      </div>
+
+      <div class="gallery-card">
+        <img src="assets/img/img_b7.jpeg" alt="">
+      </div>
+
+      <div class="gallery-card">
+        <img src="assets/img/img_b8.png" alt="">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
   <!-- Reviews -->
-  <section id="reviews" class="bg-zinc-50 py-16 sm:py-20">
-    <div class="mx-auto max-w-6xl px-4">
-      <p class="text-sm font-bold text-red-700">Reviews</p>
-      <h2 class="mt-3 text-3xl font-black">What Patients Say</h2>
+<section id="reviews" class="bg-zinc-50 py-16 sm:py-20 overflow-hidden">
 
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="p-6 border rounded-2xl shadow-soft bg-white">
-          <p class="text-yellow-500">★★★★★</p>
-          <p class="mt-3 text-sm text-zinc-600">
-            Very fast and accurate service. Staff is friendly.
-          </p>
-          <p class="mt-3 font-bold">Ravi Kumar</p>
-        </div>
+  <div class="mx-auto max-w-6xl px-4 text-center">
+    <p class="text-sm font-bold text-red-700">
+      Reviews
+    </p>
 
-        <div class="p-6 border rounded-2xl shadow-soft bg-white">
-          <p class="text-yellow-500">★★★★★</p>
-          <p class="mt-3 text-sm text-zinc-600">
-            Affordable pricing and quick reports.
-          </p>
-          <p class="mt-3 font-bold">Anjali S</p>
-        </div>
+    <h2 class="mt-3 text-3xl font-black">
+      What Patients Say
+    </h2>
+  </div>
 
-        <div class="p-6 border rounded-2xl shadow-soft bg-white">
-          <p class="text-yellow-500">★★★★☆</p>
-          <p class="mt-3 text-sm text-zinc-600">
-            Good lab with clean environment.
-          </p>
-          <p class="mt-3 font-bold">Manoj R</p>
+  <!-- Slider -->
+  <div class="relative mt-12">
+
+    <div class="review-slider flex gap-6">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <p class="text-yellow-500 text-lg">★★★★★</p>
+
+        <p class="mt-4 text-zinc-600 text-sm leading-7">
+          Very fast and accurate service. Staff is friendly and reports are delivered quickly.
+        </p>
+
+        <div class="mt-5">
+          <h4 class="font-bold text-zinc-900">Ravi Kumar</h4>
+          <p class="text-xs text-zinc-400">Patient</p>
         </div>
       </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <p class="text-yellow-500 text-lg">★★★★★</p>
+
+        <p class="mt-4 text-zinc-600 text-sm leading-7">
+          Affordable pricing and excellent diagnostic service in Davanagere.
+        </p>
+
+        <div class="mt-5">
+          <h4 class="font-bold text-zinc-900">Anjali S</h4>
+          <p class="text-xs text-zinc-400">Patient</p>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <p class="text-yellow-500 text-lg">★★★★☆</p>
+
+        <p class="mt-4 text-zinc-600 text-sm leading-7">
+          Clean environment and professional staff. Home collection service is very useful.
+        </p>
+
+        <div class="mt-5">
+          <h4 class="font-bold text-zinc-900">Manoj R</h4>
+          <p class="text-xs text-zinc-400">Patient</p>
+        </div>
+      </div>
+
+      <!-- Duplicate cards for infinite loop -->
+
+      <div class="review-card">
+        <p class="text-yellow-500 text-lg">★★★★★</p>
+
+        <p class="mt-4 text-zinc-600 text-sm leading-7">
+          Very fast and accurate service. Staff is friendly and reports are delivered quickly.
+        </p>
+
+        <div class="mt-5">
+          <h4 class="font-bold text-zinc-900">Ravi Kumar</h4>
+          <p class="text-xs text-zinc-400">Patient</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <p class="text-yellow-500 text-lg">★★★★★</p>
+
+        <p class="mt-4 text-zinc-600 text-sm leading-7">
+          Affordable pricing and excellent diagnostic service in Davanagere.
+        </p>
+
+        <div class="mt-5">
+          <h4 class="font-bold text-zinc-900">Anjali S</h4>
+          <p class="text-xs text-zinc-400">Patient</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
 
   <!-- Contact -->
   <section id="contact" class="bg-zinc-900 py-16 sm:py-20 text-white">
@@ -574,7 +916,7 @@
         <p class="text-sm font-bold uppercase tracking-wide text-red-300">Contact Us</p>
       </div>
 
-      <div class="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="mt-10 grid gap-6 lg:grid-cols-2 items-stretch">
 
         <!-- Left contact card -->
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-7 shadow-soft">
@@ -614,7 +956,23 @@
             </div>
           </div>
         </div>
+        <!-- Google Maps Card -->
+
+        <div class="overflow-hidden rounded-3xl border border-white/10 shadow-soft min-h-full">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.446184521357!2d75.91204171098752!3d14.459049880467557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba25c0a46a7247%3A0x397db18d01e72fda!2sSiddaganga%20hi%20tech%20diagnostic%20center!5e0!3m2!1sen!2sin!4v1779535674362!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            class="min-h-[420px] w-full"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
+
 
       <footer
         class="mt-12 border-t border-white/10 pt-6 flex flex-col gap-2 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between">
@@ -718,6 +1076,39 @@ Please share available time slots and details.`
       window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     }
   </script>
+
+<!-- Premium Floating Call Button -->
+
+<a
+  href="tel:+918618404638"
+  class="fixed bottom-24 right-5 z-50 group">
+
+  <div class="flex h-16 w-16 items-center justify-center rounded-2xl
+              bg-white/90 backdrop-blur-xl border border-white/40
+              shadow-[0_10px_40px_rgba(0,0,0,0.12)]
+              transition-all duration-300
+              group-hover:scale-110
+              group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+
+    <img src="assets/img/cl_img.png"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.8"
+      stroke="currentColor"
+      class="h-10 w-10 text-zinc-800">
+
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M2.25 6.75c0 7.456 6.044 13.5 13.5 13.5h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L5.463 2.852A1.125 1.125 0 004.372 2H3A2.25 2.25 0 00.75 4.25v2.5z" />
+
+    </svg>
+
+  </div>
+
+</a>
+
+</body>
 </body>
 
 </html>
